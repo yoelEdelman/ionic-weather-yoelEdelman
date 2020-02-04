@@ -1,17 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ion-app>
+      <Header/>
+      <ion-content>
+
+        <city-form @weather-card="weatherResult"/>
+        <card-weather v-if="result" :result="result"/>
+
+      </ion-content>
+    </ion-app>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CityForm from './components/CityForm.vue'
+import Header from "./components/Header.vue";
+import CardWeather from "./components/CardWeather";
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CardWeather,
+    Header,
+    CityForm,
+  },
+  data() {
+    return {
+      result: null
+    }
+  },
+  methods: {
+    weatherResult(result) {
+      this.result = null
+      this.result = result
+    }
   }
 }
 </script>
@@ -24,5 +46,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: black;
 }
 </style>
