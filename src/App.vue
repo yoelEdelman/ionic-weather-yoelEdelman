@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <ion-app>
-      <Header/>
-      <ion-content>
+    <ion-app >
+        <Header/>
+        <ion-content class="main-background">
 
-        <city-form @weather-card="weatherResult"/>
-        <card-weather v-if="result" :result="result"/>
+          <city-form @weather-card="weatherResult"/>
+          <card-weather v-if="result" :result="result"/>
 
-      </ion-content>
+        </ion-content>
     </ion-app>
   </div>
 </template>
@@ -46,6 +46,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background: black;
+}
+.main-background {
+  --background: #101f3e;
 }
 </style>
