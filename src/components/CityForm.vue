@@ -24,12 +24,12 @@
         },
         methods: {
             search() {
-                axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.location},&APPID=fc94cdf16f9e67399b434a447c3963da`)
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.location},&APPID=fc94cdf16f9e67399b434a447c3963da`)
                     .then(response => {
                         // JSON responses are automatically parsed.
                         this.result = null
                         this.result = response.data
-                        this.result.icon = `http://openweathermap.org/img/wn/${this.result.weather[0].icon}@2x.png`
+                        this.result.icon = `https://openweathermap.org/img/wn/${this.result.weather[0].icon}@2x.png`
                         this.$emit("weather-card", this.result)
                         this.location = ""
                     })

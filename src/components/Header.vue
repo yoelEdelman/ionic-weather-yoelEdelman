@@ -1,6 +1,6 @@
 <template>
     <ion-header class="main-background">
-        <ion-toolbar>
+        <ion-toolbar class="main-background">
             <ion-buttons slot="start">
                 <ion-back-button id="search-button"></ion-back-button>
             </ion-buttons>
@@ -30,9 +30,9 @@
         padding: 0;
     }
     .main-background {
-        background: #101f3e;
+        --background: #101f3e;
     }
     .main-color {
-        color: #8bc6ff;
+        --color: #8bc6ff;
     }
 </style>
